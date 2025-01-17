@@ -38,10 +38,6 @@
     margin: 0; 
 }
 
-.nav-logo:hover {
-    color: var(--bluev);
-}
-
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -100,7 +96,7 @@
 
 
 
-
+/******contact-page******/
 .contact-page {
     position: relative;
     padding: 7rem 2rem 4rem;
@@ -240,6 +236,11 @@
     font-size: 0.95rem;
 }
 
+
+
+
+
+/*****footer*****/
 footer{
     display: flex;
     background-color: var(--bluev);
@@ -294,10 +295,7 @@ footer{
 }
 .contact-coordon{
     display: flex;
-
-
 }
-
 .footer-contact div  p {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -324,6 +322,8 @@ footer div {
     padding: 0;
     margin: 0;
 }
+
+
 
 
 @media (max-width: 768px) {
