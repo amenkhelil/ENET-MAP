@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="planning.css">
+    <title>ENET'MAP-Plannig</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo"><img src="ENET'MAP.png" alt=""></a>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="planning.html" class="nav-link-in">Planning</a>
+                <a href="reservation.html" class="nav-link">Reservation</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="signin"> sign in </button>
+            <button class="mobile-menu" id="mobileMenu"><i class='bx bx-menu'></i></button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <button class="filter-btn">
+            <i class='bx bx-filter'></i>
+        </button>
+        <aside class="filter-sidebar">
+            <div class="search-container">
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h3>Property Filter</h3>
+                    <button class="reset-btn">Reset all</button>
+                </div>
+
+                <div class="filter-group">
+                    <label>Max Occupation</label>
+                    <div class="range-slider">
+                        <input type="range" min="20" max="70" value="20" class="slider">
+                        <div class="range-values">
+                            <span>20</span>
+                            <span>70</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Scheduling Region</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox">
+                            <input type="checkbox" value="second-floor">
+                            Ground floor
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="first-floor">
+                            First floor
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" value="second-floor">
+                            Second floor
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Class type</label>
+                    <select class="select-input">
+                        <option value="classroom">Classroom</option>
+                        <option value="amphi">Amphi</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Square feet</label>
+                    <div class="number-inputs">
+                        <input type="number" placeholder="Min" class="number-input">
+                        <input type="number" placeholder="Max" class="number-input">
+                    </div>
+                </div>
+
+                <button class="search-btn">Search</button>
+            </div>
+        </aside>
+
+        <div class="rooms-grid">
+                <div class="room-card" data-room="C22">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80" alt="Classroom C22">
+                    <div class="room-info">
+                        <h2>C 22</h2>
+                        <div class="room-details">
+                            <span><i class='bx bxs-info-circle'></i> Classroom</span>
+                            <span><i class='bx bxs-group'></i> Max Occupancy: 28</span>
+                            <span><i class='bx bxs-building'></i>  Second floor</span>
+                        </div>
+                    </div>
+                    <a href=""><i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+                <div class="room-card">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80" alt="Classroom C22">
+                    <div class="room-info">
+                        <h2>C 22</h2>
+                        <div class="room-details">
+                            <span><i class='bx bxs-info-circle'></i> Classroom</span>
+                            <span><i class='bx bxs-group'></i> Max Occupancy: 28</span>
+                            <span><i class='bx bxs-building'></i>  Second floor</span>
+                        </div>
+                    </div>
+                    <a href=""><i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+                <div class="room-card">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80" alt="Classroom C22">
+                    <div class="room-info">
+                        <h2>C 22</h2>
+                        <div class="room-details">
+                            <span><i class='bx bxs-info-circle'></i> Classroom</span>
+                            <span><i class='bx bxs-group'></i> Max Occupancy: 28</span>
+                            <span><i class='bx bxs-building'></i>  Second floor</span>
+                        </div>
+                    </div>
+                    <a href=""><i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+                <div class="room-card">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80" alt="Classroom C22">
+                    <div class="room-info">
+                        <h2>C 22</h2>
+                        <div class="room-details">
+                            <span><i class='bx bxs-info-circle'></i> Classroom</span>
+                            <span><i class='bx bxs-group'></i> Max Occupancy: 28</span>
+                            <span><i class='bx bxs-building'></i>  Second floor</span>
+                        </div>
+                    </div>
+                    <a href=""><i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+                <div class="room-card">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80" alt="Classroom C22">
+                    <div class="room-info">
+                        <h2>C 22</h2>
+                        <div class="room-details">
+                            <span><i class='bx bxs-info-circle'></i> Classroom</span>
+                            <span><i class='bx bxs-group'></i> Max Occupancy: 28</span>
+                            <span><i class='bx bxs-building'></i>  Second floor</span>
+                        </div>
+                    </div>
+                    <a href=""><i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+
+                <div class="room-card">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80" alt="Classroom C22">
+                    <div class="room-info">
+                        <h2>C 22</h2>
+                        <div class="room-details">
+                            <span><i class='bx bxs-info-circle'></i> Classroom</span>
+                            <span><i class='bx bxs-group'></i> Max Occupancy: 28</span>
+                            <span><i class='bx bxs-building'></i>  Second floor</span>
+                        </div>
+                    </div>
+                    <a href=""><i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+
+                <div class="room-card">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80" alt="Classroom C22">
+                    <div class="room-info">
+                        <h2>C 22</h2>
+                        <div class="room-details">
+                            <span><i class='bx bxs-info-circle'></i> Classroom</span>
+                            <span><i class='bx bxs-group'></i> Max Occupancy: 28</span>
+                            <span><i class='bx bxs-building'></i>  Second floor</span>
+                        </div>
+                    </div>
+                    <a href=""><i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+    </main>
+
+
+    <footer>
+        <div class="footer-description">
+            <h3>ENET'MAP</h3>
+            <p>This platform is proudly developed by <span><a href="http://enetcomje.com/"> ENET'Com Junior Entreprise</a></span> to facilitate the reservation of classrooms for clubs. Combining innovation and professionalism, we aim to streamline club activities and enhance collaboration.</p>
+        </div>
+        <div class="quik-links">
+            <h3>Quik Links</h3>
+            <a href="home.html">Home</a>
+            <a href="planning.html">Planning</a>
+            <a href="reservation.html">Reservation</a>
+            <a href="abou.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <div class="contact-coordon"><i class='bx bx-map'></i><p>Route de Tunis, cité el Ons,<br>Technopôle de Sfax - 3018 Sfax</p></div>
+            <div class="contact-coordon"><i class='bx bx-phone' ></i><p>74 863 047 / 74 862 500</p></div>
+            <div class="contact-coordon"><i class='bx bx-envelope'></i><p>contact@enetcom.rnu.tn</p></div>
+            
+        </div>
+        <div>
+            <img class="enetcom" src="ENET'Com.png" alt="ENET'Com">
+            <p class="copy">&copy;2025 ENET'MAP. All rights are reserved. </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById("mobileMenu");
+        const navLinks = document.querySelector(".nav-links");
+        const filterSidebar = document.querySelector(".filter-sidebar")
+        const filterBtn = document.querySelector(".filter-btn");
+
+        mobileMenuButton.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        filterBtn.addEventListener("click", () => {
+            filterSidebar.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
