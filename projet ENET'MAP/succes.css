@@ -1,0 +1,182 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background-color: #046e80;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ 
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a.active {
+    text-decoration: underline;
+  }
+  
+  .logo img{
+    width:100px;
+  }
+  .profile-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .reservation-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reservation-form h1 {
+    text-align: center;
+    color: #046e80;
+  }
+  
+  .reservation-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reservation-form form label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .reservation-form form input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .reservation-form form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f57c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .reservation-form form button:hover {
+    background-color: #e66a00;
+  }
+
+  .success-message {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+  }
+  
+  .success-message h1 {
+    color: #4caf50;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .success-message p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .success-message a.btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .success-message a.btn:hover {
+    background-color: #388e3c;
+  }
+  
+
+
+
+
+
+
+
+  
+  footer {
+    background-color: #046e80;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  footer h3 {
+    margin-bottom: 10px;
+  }
+  
+  footer p, footer ul {
+    margin: 0;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid white;
+    padding-top: 10px;
+  }
