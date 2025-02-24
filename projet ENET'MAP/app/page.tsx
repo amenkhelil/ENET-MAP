@@ -7,7 +7,7 @@ import styles from './page.module.css';
 
 function HomeAdmin() {
   return (
-    <div className="home-container">
+    <div className={styles.homeContainer}>
       <Navbar currentPath="/" />
       
       <main className={styles.mainContent}>
