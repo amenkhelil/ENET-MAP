@@ -7,7 +7,7 @@ import styles from './page.module.css';
 
 function HomeSign() {
   return (
-    <div className="home-container">
+    <div className={styles.homeContainer}>
       <Navbar currentPath="/AfterSign/Home" />
       
       <main className={styles.mainContent}>
