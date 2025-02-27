@@ -25,7 +25,7 @@ function ClassCard({ title, img, type, occ, location, isAdmin, onEdit, onDelete 
                     <span><i className='bx bxs-building'></i>{location}</span>
                 </div>
             </div>
-            {isAdmin && ( // Afficher les boutons uniquement si l'utilisateur est un admin
+            {isAdmin && (
                 <div className="card-actions">
                     <button onClick={onEdit} className="edit-button">
                         Edit
