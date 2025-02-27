@@ -1,0 +1,1486 @@
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+
+:root {
+  --bluev: #15919B;
+  --blue: #0C6478;
+  --bluevio:#063475;
+  --orange:#F07122;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+
+
+body{
+  overflow-x: hidden;
+}
+
+
+.navbar {
+  background: var(--bluev);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
+.nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav-logo img{
+  height: 4rem;
+  width: auto;
+  margin: 0; 
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease-in;
+}
+.nav-link-in{
+  color: var(--bluevio);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: large;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  text-shadow: var(--shadow);
+}
+
+.nav-link:hover {
+  color: var(--bluevio);
+}
+.signin{
+  border: 2px solid var(--bluevio);
+  background-color: transparent;
+  border-radius: 5px;
+  color: var(--bluevio);
+  font-size: large;
+  font-weight: 600;
+  padding: 0.35rem 1.1rem;
+}
+
+.signin:hover{
+  background-color: var(--bluevio);
+  color: white;
+  font-weight: 700;
+}
+
+.nav-link.active {
+  color: white;
+}
+
+.mobile-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--bluevio);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.mobile-menu i{
+  font-size: 1.8rem;
+}
+
+.profile-button {
+  background: none;
+  border-style:double;
+  border-radius: 80%;
+  border-color: white;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.profile-button:hover {
+  color: var(--bluevio);
+  border-color: var(--bluevio);
+}
+
+
+
+
+
+
+/*************************contact-page*********************/
+.contact-page {
+  position: relative;
+  padding: 7rem 2rem 4rem;
+  z-index: 1;
+  flex: 1;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+
+
+
+.contact-form-container {
+  background: rgb(240, 249, 250);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  color: var(--orange);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--bluevio);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-right: 3.5rem;
+  border: 2px solid var(--bluevio);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(232, 178, 152, 0.2);
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 106%;
+  padding: 1rem;
+  background: var(--orange);
+  color: var(--bluevio);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #e0a485;
+  transform: translateY(-2px);
+}
+
+
+
+
+.contact-info {
+  padding: 2rem;
+  background: var(--blue);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.contact-info h1 {
+  font-size: 2.5rem;
+  color: var(--bluevio);
+  margin-bottom: 1rem;
+  text-shadow: var(--bluevio);
+  padding-bottom: 6%;
+}
+
+.info-cards {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.info-card {
+  flex-direction: column;
+  padding: 1.5rem;
+  background: whitesmoke;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+}
+
+.info-card i {
+  font-size: 1.5rem;
+  color: var(--blurvio);
+}
+
+.info-card h3 {
+  color: var(--bluevio);
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  color: var(--bluevio);
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+
+
+
+
+
+
+
+
+
+  /****************************planning page************************/
+/* Main Content */
+.main-content {
+  margin-top: 80px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 80px auto 0;
+  height: 100%;
+}
+
+
+.filter-btn {
+  display: none;
+  position: fixed;
+  bottom: 32.3rem;
+  left: 0.3rem;
+  z-index: 40;
+  background: var(--orange);
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.filter-btn i{
+  font-size: 1.5rem;
+  color: var(--bluevio);
+}
+.filter-btn:hover{
+  background: #e0a485;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+  position: fixed;
+  background: rgb(254, 255, 255);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  height: fit-content;
+  width: 30%;
+}
+
+.search-container {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  margin-right: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--bluevio);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.search-input:focus{
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(232, 178, 152, 0.2);
+}
+
+.filter-section {
+  padding: 1rem;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-header h3 {
+  font-size: 1.3rem;
+  font-weight: 550;
+  color: var(--bluevio);
+}
+
+.reset-btn {
+  color: var(--bluevio);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--bluevio);
+}
+
+.range-slider {
+  padding: 0 0.5rem;
+}
+
+.slider {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance:none;
+  height: 2px;
+  background: var(--bluevio);
+  outline: none;
+  margin: 1rem 0;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--bluevio);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color:var(--bluevio);
+}
+
+/* Checkboxes */
+.checkbox-group {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.checkbox input{
+  width: 16px;
+  height: 16px;
+}
+
+/* Select Input */
+.select-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--bluevio);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--bluevio);
+}
+.select-input:focus{
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(232, 178, 152, 0.2);
+}
+
+/* Square Feet Inputs */
+.number-inputs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.number-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--bluevio);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.number-input:focus{
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(232, 178, 152, 0.2);
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: var(--orange);
+  color: var(--bluevio);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #e0a485;
+  transform: translateY(-2px);
+}
+
+
+/*****rooms*******/
+.rooms-grid {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-left: 35%;
+  gap: 1rem;
+  position: absolute;
+  width: 70%;
+  flex-wrap: wrap;
+  display: flex;
+  flex: 1;
+}
+
+.room-card {
+  background: rgb(240, 249, 250);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:var(--shadow);
+  width: 26%;
+  transition: transform 0.3s ease;
+
+}
+.room-card:hover{
+  transform: translateY(-2px);
+}
+.room-card a {
+  position: relative;
+  left: 87%;
+  bottom: 36%;
+}
+.room-card a i {
+  font-size: 1.5rem;
+  color: var(--bluevio);
+}
+
+.room-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 1rem;
+}
+
+.room-info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--bluevio);
+  margin-top: 0.2rem;
+}
+
+.room-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.room-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #2a4a69;
+}
+
+.room-details i {
+  color: #008B8B;
+  font-size: 1rem;
+}
+
+
+
+
+
+/*********Add room*******************/
+
+
+
+
+
+.add-room-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.add-room-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-room-modal h2 {
+  color: #2a4a69;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #2a4a69;
+  font-weight: 500;
+}
+
+.form-group select{
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #2a4a69;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.form-group input {
+  width: 95%;
+  padding: 0.75rem;
+  border: 2px solid #2a4a69;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #E8B298;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background: #E8B298;
+  color: #2a4a69;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #e0a485;
+}
+
+.add-room-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.add-room-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.add-room-content i {
+  font-size: 3rem;
+  color: var(--bluevio);
+  margin-bottom: 0.5rem;
+}
+
+.add-room-content p {
+  color: var(--bluevio);
+  font-weight: 600;
+}
+
+.add-room-card:hover {
+  transform: translateY(-2px);
+  background: #f8f9fa;
+}
+
+
+/*****************edit card******************/
+
+.edit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.edit-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.edit-modal h2{
+  color: #2a4a69;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.save-button {
+  width: 100%;
+  padding: 1rem;
+  background: #E8B298;
+  color: #2a4a69;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background: #e0a485;
+}
+
+.edit-modal-image {
+  width: 100px;
+  height: 60px;
+  margin-bottom: 8px;
+}
+
+
+
+/************delete modal**************/
+
+.delete-modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.delete-modal{
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.delete-modal-content {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.delete-modal-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.delete-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 4%;
+}
+
+/***************************/
+.card-actions {
+  display: flex;
+  gap: 10px; 
+  margin-top: 3px;
+  margin-bottom: 7px;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-button, .delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 40%;
+}
+
+.edit-button {
+  background-color: var(--bluev);
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: var(--blue);
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************footer****************************/
+footer{
+  display: flex;
+  background-color: var(--bluev);
+  margin: 0;
+  padding: 0;
+  max-height: 6%;
+  width: 102%;
+}
+.planning-footer {
+  position: relative;
+  top: 73rem;
+}
+
+.footer-description{
+  max-width: 33%;
+  margin-right: 6%;
+  margin-left: 1.5%;
+}
+.footer-description h3 {
+  color: var(--bluevio);
+  font-weight: bolder;
+  margin-bottom: 0.4%;
+}
+.footer-description p {
+  color: rgb(219, 220, 220);
+  font-size: medium;
+  line-height: 150%;
+}
+.footer-description p a {
+  color: rgb(215, 241, 250);
+  text-decoration: none;
+}
+.footer-description p a:hover{
+  color: var(--blue);
+}
+.quik-links{
+  margin-right: 7%;
+}
+.quik-links h3 {
+  color: aliceblue;
+  font-weight: bold;
+  margin-bottom: 18%;
+}
+.quik-links a{
+  text-decoration: none;
+  color: rgb(219, 220, 220);
+  display: flex;
+  margin-top: 7%;
+  margin-bottom: 2%;
+
+}
+
+
+.footer-contact h3{
+  color: aliceblue;
+  font-weight: bold;
+}
+.contact-coordon{
+  display: flex;
+}
+.footer-contact div  p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 0.6rem;
+  color: rgb(219, 220, 220);
+}
+.footer-contact div i{
+  color:rgb(219, 220, 220) ;
+}
+
+.enetcom{
+  width:55%;
+  height: auto;
+  padding-left: 40%;
+  padding-top: 2%;
+}
+.copy{
+  margin: 0;
+  color:rgb(219, 220, 220)  ;
+  padding-top: 2.4rem;
+  padding-left: 9rem;
+}
+footer div {
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************Requests answer cards*********************************************************/
+
+.container {
+  max-width: 99%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 97px;
+}
+
+.status-card {
+  background-color: rgb(244, 247, 247);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.label {
+  color: rgb(75, 85, 99);
+  width: 3rem;
+}
+
+.value {
+  font-weight: 500;
+}
+
+.status-info {
+  text-align: right;
+}
+
+.status-accepted {
+  color: var(--orange);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.status-declined {
+  color: var(--bluevio);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.timestamp {
+  color: rgb(107, 114, 128);
+  font-size: 0.875rem;
+  margin-top: 1.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************************responsive design********************************/
+
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+  }
+
+  .mobile-menu {
+      display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(235, 241, 243, 0.95);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+  .mobile-menu.menu-open {
+    color: white;
+  }
+
+
+  .nav-link  {
+      padding: 0.1rem 1.5rem 0.5rem;
+      color: var(--bluevio);
+  }
+  .nav-link-in{
+      padding: 0.1rem 1.5rem 0.5rem;
+      color: var(--bluevio);
+      font-size: medium;
+  }
+  .nav-link.active {
+    color: white;
+}
+
+  .nav-logo img{
+      height: 3rem;
+      width: auto;
+  }
+  /**************RD footer*************/
+  footer{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  footer div{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  footer img {
+    margin-left: 20%;
+  }
+  .footer-description{
+      max-width: 100%;
+      margin: 2%;
+      text-align: center;
+  }
+  .quik-links{
+      display: none;
+  }
+  .footer-contact{
+      text-align: center;
+  }
+  .enetcom{
+      height:9rem;
+      width: auto;
+      padding: 0;
+  }
+/**************RD planning page*****************/
+    .filter-sidebar{
+      transform: translateX(-500%);
+    }
+    .filter-sidebar.active{
+      transform: translateX(0);
+      z-index: 90;
+      transform: translateY(-22px);
+      width: 85%;
+      height: fit-content;
+  }
+    .rooms-grid{
+      margin-left: 0;
+      width: 98%;
+    }
+    .room-card{
+      width: 46%;
+      padding-bottom: 0;
+    }
+    .room-card img{
+      height: 8rem;
+    }
+    .room-card span{
+      font-size: 0.88rem;
+    }
+    .room-card h2{
+      font-size: 1.4rem;
+    }
+    .filter-btn{
+      display: block;
+      z-index: 91;
+    }
+    .room-card a {
+      bottom: 41%;
+    }
+    .room-details{
+      margin-bottom: 0;
+    }
+
+}
+
+
+
+
+
+  @media (max-width: 480px) {
+      .nav-container {
+          padding: 1rem;
+      }
+  /************RD contact page************/
+      .contact-form-container {
+          padding: 3rem;
+      }
+  
+      .info-card {
+          padding: 0rem;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+      }
+      .nav-logo img{
+          height: 3rem;
+          width: auto;
+      }
+      .copy{
+          padding-left: 0;
+          padding-right: 0;
+      }
+/***********RD footer ***********/
+      footer img{
+        margin-left: 0;
+      }
+/*******RD planningpage*******/
+      .room-card a{
+        bottom: 45%;
+        left: 80%;
+      }
+
+/*******************RD Request answer card**********************/
+      .value{
+        font-weight: 100;
+        font-size: small;
+      }
+      .info-row{
+        gap: 0rem;
+      }
+      .status-accepted,
+      .status-declined{
+        font-size: 120%;
+      }
+      .status-card{
+        margin-left: 6%;
+      }
+      .timestamp {
+        font-size: 0.675rem;
+        margin-top: 3rem;
+        margin-bottom: 0;
+      }
+
+  }
+
+
+
+
+
+
+
+
+  /* Room Reservation Page */
+.room-reservation-container {
+  padding-top: 70px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* Room Header */
+.room-header {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.room-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-header-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+}
+
+.room-header-content h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.room-tags {
+  display: flex;
+  gap: 10px;
+}
+
+.room-tag {
+  background-color: var(--bluev);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Room Content */
+.room-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* Room Photos */
+.room-photos {
+  width: 40%;
+}
+
+.room-main-photo {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.room-main-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.room-photo {
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.room-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.room-photo img:hover {
+  transform: scale(1.05);
+}
+
+/* Calendar and Reservations */
+.room-calendar-section {
+  width: 60%;
+}
+
+/* Calendar */
+.calendar {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  color: var(--bluevio);
+}
+
+.calendar-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.calendar-nav button {
+  background: none;
+  border: none;
+  color: var(--bluevio);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day-header {
+  text-align: center;
+  font-weight: bold;
+  color: var(--bluevio);
+  padding: 5px;
+}
+
+.calendar-day {
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendar-day:hover {
+  background-color: #e9ecef;
+}
+
+.calendar-day.today {
+  background-color: var(--bluev);
+  color: white;
+}
+
+.calendar-day.selected {
+  background-color: var(--orange);
+  color: white;
+}
+
+.calendar-day.other-month {
+  color: #adb5bd;
+}
+
+/* Reservations */
+.reservations {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.reservations h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--bluevio);
+}
+
+.reservation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reservation-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.reservation-time {
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--bluevio);
+}
+
+.reservation-details {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.reservation-details h3 {
+  margin: 0;
+  margin-bottom: 5px;
+  color: var(--bluevio);
+}
+
+.reservation-details p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.reservation-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Reserve Button */
+.reserve-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.reserve-button:hover {
+  background-color: #e0a485;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .room-content {
+    flex-direction: column;
+  }
+  
+  .room-photos, .room-calendar-section {
+    width: 100%;
+  }
+}

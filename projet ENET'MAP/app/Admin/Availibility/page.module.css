@@ -1,0 +1,264 @@
+.roomReservationContainer {
+    padding-top: 70px;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  .roomHeader {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+  
+  .roomHeader img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .roomHeaderContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+  }
+  
+  .roomHeaderContent h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .roomTags {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .roomTag {
+    background-color: var(--bluev);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .roomContent {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .roomPhotos {
+    width: 55%;
+  }
+  
+  .roomMainPhoto {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .roomMainPhoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .roomPhotoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .roomPhoto {
+    height: 160px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .roomPhoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .roomPhoto img:hover {
+    transform: scale(1.05);
+  }
+  
+  .roomCalendarSection {
+    width: 45%;
+  }
+  
+  .calendar {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .calendarHeader h2 {
+    margin: 0;
+    color: var(--bluevio);
+  }
+  
+  .calendarNav {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .calendarNav button {
+    background: none;
+    border: none;
+    color: var(--bluevio);
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .calendarGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+  
+  .calendarDayHeader {
+    text-align: center;
+    font-weight: bold;
+    color: var(--bluevio);
+    padding: 5px;
+  }
+  
+  .calendarDay {
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .calendarDay:hover {
+    background-color: #e9ecef;
+  }
+  
+  .calendarDay.today {
+    background-color: var(--bluev);
+    color: white;
+  }
+  
+  .calendarDay.selected {
+    background-color: var(--orange);
+    color: white;
+  }
+  
+  .calendarDay.otherMonth {
+    color: #adb5bd;
+  }
+  
+  .reservations {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .reservations h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--bluevio);
+  }
+  
+  .reservationList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .reservationItem {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .reservationTime {
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--bluevio);
+  }
+  
+  .reservationDetails {
+    flex: 1;
+    padding: 0 15px;
+  }
+  
+  .reservationDetails h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    color: var(--bluevio);
+  }
+  
+  .reservationDetails p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  .reservationActions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .reserveButton {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .reserveButton:hover {
+    background-color: #e0a485;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .roomContent {
+      flex-direction: column;
+    }
+    
+    .roomPhotos, .roomCalendarSection {
+      width: 100%;
+    }
+  }

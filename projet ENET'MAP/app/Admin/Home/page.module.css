@@ -1,0 +1,99 @@
+.homeContainer {
+    min-height: 100vh;
+    width: 101%;
+  }
+  
+  .mainContent {
+    padding-top: 80px;
+  }
+
+  .heroPhrase {
+    text-align: center;
+  }
+  
+  .heroSection {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.5)),url('https://media.licdn.com/dms/image/v2/D4D22AQGVuud3n0AhQw/feedshare-shrink_800/feedshare-shrink_800/0/1705588365896?e=2147483647&v=beta&t=wMkSXAEU6yEncBkrpP9NXgyrEByyGA4rE9MoxJNfStI');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 220px 0 320px;
+  }
+  
+  .heroPhrase h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--bluevio);
+  }
+  
+  .heroSection p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: var(--shadow);
+  }
+  
+  .heroButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .btnPrimary {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: var(--orange);
+    color: white;
+  }
+  
+  .btnPrimary:hover {
+    background-color: #e0611d;
+    transform: translateY(-2px);
+  }
+  
+  .btnSecondary {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: var(--orange);
+    border: 2px solid var(--orange);
+  }
+  
+  .btnSecondary:hover {
+    background-color: white;
+    color: var(--orange);
+    transform: translateY(-2px);
+  }
+
+
+
+
+  @media (max-width: 768px) {
+    .heroSection h1 {
+      font-size: 2rem;
+    }
+  
+    .heroSection p {
+      font-size: 1rem;
+    }
+  
+    .heroButtons, .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .btn {
+      width: 200px;
+    }
+  }
