@@ -4,7 +4,7 @@ import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import ClassCard from "@/Components/ClassCard";
 import AddRoomCard from "@/Components/AddRoomCard";
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 type Room = {
     img: string;
@@ -12,129 +12,71 @@ type Room = {
     type: string;
     occ: number;
     location: string;
-}
+};
 
 function PlanningAdmin() {
-    const [isNavLinksActive, setNavLinksActive] = useState(false);
-    const [isFilterSidebarActive, setFilterSidebarActive] = useState(false);
-  
-    useEffect(() => {
-      const mobileMenuButton = document.getElementById("mobileMenu");
-      const filterBtn = document.querySelector(".filter-btn");
-  
-      const handleMobileMenuClick = () => {
-        setNavLinksActive((prev) => !prev);
-      };
-  
-      const handleFilterBtnClick = () => {
-        setFilterSidebarActive((prev) => !prev);
-      };
-      if (mobileMenuButton) {
-        mobileMenuButton.addEventListener("click", handleMobileMenuClick);
-      }
-      if (filterBtn) {
-        filterBtn.addEventListener("click", handleFilterBtnClick);
-      }
-      return () => {
-        if (mobileMenuButton) {
-          mobileMenuButton.removeEventListener("click", handleMobileMenuClick);
-        }
-        if (filterBtn) {
-          filterBtn.removeEventListener("click", handleFilterBtnClick);
-        }
-      };
-    }, []);
-
-    const [rooms, setRooms] = useState<Room[]>([
+    const rooms = [
         { img: "/class.avif", title: "C 22", type: "Classroom", occ: 28, location: "Second Floor" },
-        { img: "/class.avif", title: "C 22", type: "Classroom", occ: 28, location: "Second Floor" },
-        { img: "/class.avif", title: "C 22", type: "Classroom", occ: 28, location: "Second Floor" },
-        { img: "/class.avif", title: "C 22", type: "Classroom", occ: 28, location: "Second Floor" },
-        { img: "/class.avif", title: "C 22", type: "Classroom", occ: 28, location: "Second Floor" },
-        { img: "/class.avif", title: "C 22", type: "Classroom", occ: 28, location: "Second Floor" },
-        { img: "/class.avif", title: "C 22", type: "Classroom", occ: 28, location: "Second Floor" },
-    ]);
-
-    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-    const [editingRoom, setEditingRoom] = useState<Room | null>(null);
-    const [editingIndex, setEditingIndex] = useState<number | null>(null);
-    const [deletingIndex, setDeletingIndex] = useState<number | null>(null);
+        { img: "/class.avif", title: "C 23", type: "Classroom", occ: 30, location: "First Floor" },
+    ];
 
     const editModalRef = useRef<HTMLDivElement>(null);
     const deleteModalRef = useRef<HTMLDivElement>(null);
+    const filterSidebarRef = useRef<HTMLDivElement>(null);
 
-    const isAdmin = true; 
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (editModalRef.current && !editModalRef.current.contains(event.target as Node)) {
-                setIsEditModalOpen(false);
-            }
-            if (deleteModalRef.current && !deleteModalRef.current.contains(event.target as Node)) {
-                setIsDeleteModalOpen(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
+    
 
     const handleAddRoom = (newRoom: Room) => {
-        setRooms([...rooms, newRoom]);
+        rooms.push(newRoom);
     };
 
     const handleEditRoom = (index: number, updatedRoom: Room) => {
-        const updatedRooms = [...rooms];
-        updatedRooms[index] = updatedRoom;
-        setRooms(updatedRooms);
-        setIsEditModalOpen(false);
-        setEditingRoom(null);
-        setEditingIndex(null);
+        rooms[index] = updatedRoom;
     };
 
     const handleDeleteRoom = (index: number) => {
-        const updatedRooms = rooms.filter((_, i) => i !== index);
-        setRooms(updatedRooms);
-        setIsDeleteModalOpen(false);
-        setDeletingIndex(null);
+        rooms.splice(index, 1);
     };
 
-    const handleEditClick = (index: number) => {
-        setEditingRoom(rooms[index]);
-        setEditingIndex(index);
-        setIsEditModalOpen(true);
-    };
-
-    const handleDeleteClick = (index: number) => {
-        setDeletingIndex(index);
-        setIsDeleteModalOpen(true);
-    };
-
-    const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>, editingRoom: Room) => {
         const file = event.target.files?.[0];
-        if (file && editingRoom) {
+        if (file) {
             const reader = new FileReader();
             reader.onload = (e) => {
-                const dataURL = e.target?.result as string;
-                setEditingRoom({ ...editingRoom, img: dataURL });
+                editingRoom.img = e.target?.result as string;
             };
             reader.readAsDataURL(file);
         }
     };
 
+    const toggleFilterSidebar = () => {
+        if (filterSidebarRef.current) {
+            filterSidebarRef.current.classList.toggle("active");
+        }
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (editModalRef.current && !editModalRef.current.contains(event.target as Node)) {
+                editModalRef.current.style.display = 'none';
+            }
+            if (deleteModalRef.current && !deleteModalRef.current.contains(event.target as Node)) {
+                deleteModalRef.current.style.display = 'none';
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
     return (
         <>
             <Navbar currentPath='/Admin/Planning' />
             <main className="main-content">
-                <button className="filter-btn">
-                    <i className='bx bx-filter'></i>
-                </button>
-                <aside className={`filter-sidebar ${isFilterSidebarActive ? "active" : ""}`}>
+                <button className="filter-btn" onClick={toggleFilterSidebar}><i className='bx bx-filter'></i></button>
+                <aside className="filter-sidebar" ref={filterSidebarRef}>
                     <div className="search-container">
-                        <input type="text" placeholder="Search" className="search-input"/>
+                        <input type="text" placeholder="Search" className="search-input" />
                     </div>
 
                     <div className="filter-section">
@@ -146,7 +88,7 @@ function PlanningAdmin() {
                         <div className="filter-group">
                             <label>Max Occupation</label>
                             <div className="range-slider">
-                                <input type="range" min="20" max="70" defaultValue="20" className="slider"/>
+                                <input type="range" min="20" max="70" defaultValue="20" className="slider" />
                                 <div className="range-values">
                                     <span>20</span>
                                     <span>70</span>
@@ -158,15 +100,15 @@ function PlanningAdmin() {
                             <label>Scheduling Region</label>
                             <div className="checkbox-group">
                                 <label className="checkbox">
-                                    <input type="checkbox" value="ground-floor"/>
+                                    <input type="checkbox" value="ground-floor" />
                                     Ground floor
                                 </label>
                                 <label className="checkbox">
-                                    <input type="checkbox" value="first-floor"/>
+                                    <input type="checkbox" value="first-floor" />
                                     First floor
                                 </label>
                                 <label className="checkbox">
-                                    <input type="checkbox" value="second-floor"/>
+                                    <input type="checkbox" value="second-floor" />
                                     Second floor
                                 </label>
                             </div>
@@ -194,134 +136,123 @@ function PlanningAdmin() {
 
                 <div className="rooms-grid">
                     {rooms.map((room, index) => (
-                        <ClassCard 
+                        <ClassCard
                             key={index}
                             img={room.img}
                             title={room.title}
                             type={room.type}
                             occ={room.occ}
                             location={room.location}
-                            isAdmin={isAdmin} // Passer la prop isAdmin
-                            onEdit={isAdmin ? () => handleEditClick(index) : undefined} // Passer la fonction uniquement si admin
-                            onDelete={isAdmin ? () => handleDeleteClick(index) : undefined} // Passer la fonction uniquement si admin
+                            isAdmin={true}
+                            onEdit={() => {
+                                if (editModalRef.current) {
+                                    editModalRef.current.style.display = 'flex';
+                                }
+                            }}
+                            onDelete={() => {
+                                if (deleteModalRef.current) {
+                                    deleteModalRef.current.style.display = 'flex';
+                                }
+                            }}
                         />
                     ))}
-                    {isAdmin && <AddRoomCard onAddRoom={handleAddRoom} />} {/* Afficher AddRoomCard uniquement si admin */}
+                    <AddRoomCard onAddRoom={handleAddRoom} />
                 </div>
             </main>
 
-            {isEditModalOpen && editingRoom && (
-                <div className="edit-modal-overlay">
-                    <div className="edit-modal" ref={editModalRef}>
-                        <button 
-                            onClick={() => setIsEditModalOpen(false)}
-                            className="close-button"
-                        >
-                            <i className='bx bx-x'></i>
-                        </button>
-                        <h2>Edit Room</h2>
-                        <form onSubmit={(e) => {
-                            e.preventDefault();
-                            if (editingIndex !== null) {
-                                handleEditRoom(editingIndex, editingRoom);
+            <div className="edit-modal-overlay" ref={editModalRef}>
+                <div className="edit-modal">
+                    <button
+                        onClick={() => {
+                            if (editModalRef.current) {
+                                editModalRef.current.style.display = 'none';
                             }
-                        }}>
-                            <div className="form-group">
-                                <label>Room Name</label>
-                                <input
-                                    type="text"
-                                    value={editingRoom.title}
-                                    onChange={(e) => setEditingRoom({ ...editingRoom, title: e.target.value })}
-                                    required
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Room Type</label>
-                                <select
-                                    value={editingRoom.type}
-                                    onChange={(e) => setEditingRoom({ ...editingRoom, type: e.target.value })}
-                                >
-                                    <option value="Classroom">Classroom</option>
-                                    <option value="Amphi">Amphi</option>
-                                </select>
-                            </div>
-                            <div className="form-group">
-                                <label>Max Occupancy</label>
-                                <input
-                                    type="number"
-                                    value={editingRoom.occ}
-                                    onChange={(e) => setEditingRoom({ ...editingRoom, occ: parseInt(e.target.value) })}
-                                    min="1"
-                                    required
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Location</label>
-                                <select
-                                    value={editingRoom.location}
-                                    onChange={(e) => setEditingRoom({ ...editingRoom, location: e.target.value })}
-                                >
-                                    <option value="Ground Floor">Ground Floor</option>
-                                    <option value="First Floor">First Floor</option>
-                                    <option value="Second Floor">Second Floor</option>
-                                </select>
-                            </div>
-                            <div className="form-group">
-                                <label>Upload Image</label>
-                                <input
-                                    type="file"
-                                    accept="image/*"
-                                    onChange={handleImageUpload}
-                                />
-                                {editingRoom.img && (
-                                    <img 
-                                        src={editingRoom.img} 
-                                        alt="Preview" 
-                                        style={{ width: '100px', marginTop: '10px' }} 
-                                    />
-                                )}
-                            </div>
-                            <button type="submit" className="save-button">
-                                Save
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            )}
-
-            {isDeleteModalOpen && deletingIndex !== null && (
-                <div className="delete-modal-overlay">
-                    <div className="delete-modal" ref={deleteModalRef}>
-                        <h2>Are you sure you want to delete this room?</h2>
-                        <div className="delete-modal-content">
-                            <img 
-                                src={rooms[deletingIndex].img} 
-                                alt={rooms[deletingIndex].title} 
-                                className="delete-modal-image"
+                        }}
+                        className="close-button"
+                    ><i className='bx bx-x'></i></button>
+                    <h2>Edit Room</h2>
+                    <form onSubmit={(e) => {
+                        e.preventDefault();
+                    }}>
+                        <div className="form-group">
+                            <label>Room Name</label>
+                            <input
+                                type="text"
+                                defaultValue={rooms[0].title}
+                                required
                             />
-                            <p><strong>{rooms[deletingIndex].title}</strong></p>
-                            <p>Type: {rooms[deletingIndex].type}</p>
-                            <p>Location: {rooms[deletingIndex].location}</p>
                         </div>
-                        <div className="delete-modal-actions">
-                            <button 
-                                onClick={() => handleDeleteRoom(deletingIndex)} 
-                                className="confirm-delete-button"
-                            >
-                                Yes, Delete
-                            </button>
-                            <button 
-                                onClick={() => setIsDeleteModalOpen(false)} 
-                                className="cancel-delete-button"
-                            >
-                                Cancel
-                            </button>
+                        <div className="form-group">
+                            <label>Room Type</label>
+                            <select defaultValue={rooms[0].type}>
+                                <option value="Classroom">Classroom</option>
+                                <option value="Amphi">Amphi</option>
+                            </select>
                         </div>
+                        <div className="form-group">
+                            <label>Max Occupancy</label>
+                            <input
+                                type="number"
+                                defaultValue={rooms[0].occ}
+                                min="1"
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Location</label>
+                            <select defaultValue={rooms[0].location}>
+                                <option value="Ground Floor">Ground Floor</option>
+                                <option value="First Floor">First Floor</option>
+                                <option value="Second Floor">Second Floor</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <label>Upload Image</label>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => handleImageUpload(e, rooms[0])}/>
+                            {rooms[0].img && (
+                                <img
+                                    src={rooms[0].img}
+                                    alt="Preview"
+                                    className="edit-modal-image"
+                                />
+                            )}
+                        </div>
+                        <button type="submit" className="save-button">Save</button>
+                    </form>
+                </div>
+            </div>
+
+            <div className="delete-modal-overlay" ref={deleteModalRef}>
+                <div className="delete-modal">
+                    <h2>Are you sure you want to delete this room?</h2>
+                    <div className="delete-modal-content">
+                        <img
+                            src={rooms[0].img}
+                            alt={rooms[0].title}
+                            className="delete-modal-image"/>
+                        <p><strong>{rooms[0].title}</strong></p>
+                        <p>Type: {rooms[0].type}</p>
+                        <p>Location: {rooms[0].location}</p>
+                    </div>
+                    <div className="delete-modal-actions">
+                        <button
+                            onClick={() => handleDeleteRoom(0)}
+                            className="confirm-delete-button">Yes, Delete</button>
+                        <button
+                            onClick={() => {
+                                if (deleteModalRef.current) {
+                                    deleteModalRef.current.style.display = 'none';
+                                }
+                            }}
+                            className="cancel-delete-button">Cancel</button>
                     </div>
                 </div>
-            )}
+            </div>
 
-            <Footer isPlanning={true}/>
+            <Footer isPlanning={true} />
         </>
     );
 }
