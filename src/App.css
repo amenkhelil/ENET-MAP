@@ -1,0 +1,185 @@
+/* App.css */
+
+/* Footer entièrement vert */
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #0d9488;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Card */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  margin: 10px;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+
+/* Buttons */
+.confirm-btn {
+  background-color: #fb923c;
+  color: white;
+  margin-top: 10px;
+}
+
+.deny-btn {
+  background-color: transparent;
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+/* Footer */
+
+
+
+.logo {
+  height: 50px; /* Ajuste selon ton besoin */
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Popup de confirmation */
+.confirmation-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.confirmation-popup input {
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.confirmation-popup button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-popup .confirm {
+  background-color: #10b981; /* Vert clair */
+  color: white;
+}
+
+.confirmation-popup .cancel {
+  background-color: #ef4444; /* Rouge */
+  color: white;
+}
+
+/* Message de confirmation */
+.success-message {
+  color: #10b981;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Centrer le contenu du header et espacer les liens */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #047857;
+  font-weight: bold;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Améliorer les boutons */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.confirm-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.deny-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+/* Footer entièrement vert */
+footer {
+  background-color: #047857; /* Vert foncé */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
