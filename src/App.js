@@ -36,7 +36,7 @@ const ReservationCard = ({ reservation, onConfirmDeny }) => {
   };
 
   const handleConfirm = () => {
-    if (confirmationCode === "1234") {
+    if (confirmationCode === "123456789") {
       setIsConfirmed(true);
       setShowPopup(false);
     } else {
