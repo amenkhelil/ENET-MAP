@@ -1,7 +1,4 @@
-/* App.css */
 
-/* Footer entièrement vert */
-/* App.css */
 body {
   font-family: Arial, sans-serif;
   background-color: #f3f4f6;
@@ -9,7 +6,6 @@ body {
   padding: 0;
 }
 
-/* Header */
 header {
   background-color: #0d9488;
   color: white;
@@ -30,7 +26,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Container */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +33,6 @@ nav a:hover {
   margin-top: 20px;
 }
 
-/* Card */
 .card {
   background-color: white;
   padding: 20px;
@@ -58,7 +52,6 @@ nav a:hover {
   font-size: 16px;
 }
 
-/* Buttons */
 .confirm-btn {
   background-color: #fb923c;
   color: white;
@@ -71,18 +64,16 @@ nav a:hover {
   margin-top: 5px;
 }
 
-/* Footer */
 
 
 
 .logo {
-  height: 50px; /* Ajuste selon ton besoin */
+  height: 50px; 
   width: auto;
   display: block;
   margin: 0 auto;
 }
 
-/* Popup de confirmation */
 .confirmation-popup {
   position: fixed;
   top: 50%;
@@ -115,23 +106,23 @@ nav a:hover {
 }
 
 .confirmation-popup .confirm {
-  background-color: #10b981; /* Vert clair */
+  background-color: #10b981; 
   color: white;
 }
 
 .confirmation-popup .cancel {
-  background-color: #ef4444; /* Rouge */
+  background-color: #ef4444; 
   color: white;
 }
 
-/* Message de confirmation */
+
 .success-message {
   color: #10b981;
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* Centrer le contenu du header et espacer les liens */
+
 header {
   text-align: center;
   padding: 20px;
@@ -152,7 +143,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Améliorer les boutons */
+
 button {
   padding: 10px 15px;
   border: none;
@@ -176,9 +167,8 @@ button:hover {
 }
 
 
-/* Footer entièrement vert */
 footer {
-  background-color: #047857; /* Vert foncé */
+  background-color: #047857; 
   color: white;
   padding: 20px;
   text-align: center;
